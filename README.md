@@ -81,19 +81,15 @@ Typing commands in here and will affect your website, so **be careful!**
 
 ## Interlude: Practice how to copy and paste commands
 
-Entering commands into the terminal is a bit mental.
-
 You can type everything out from scratch but:
 
-a) You'll make mistakes
-b) You'll waste a ton of time
-c) You'll go crazy in about 5 minutes
+* You'll make mistakes
+* You'll waste a ton of time
+* You'll go crazy in about 5 minutes
 
 The smart way is to copy and paste in the chunks of commands we need.
 
-But to copy and paste commands in here is... ahem... somewhat mental.
-
-So let's practice that first.
+Let's practice that first.
 
 ### A. Click on the paste icon.
 
@@ -113,10 +109,7 @@ Here's what you should see:
 <img width="684" alt="untitled 6" src="https://user-images.githubusercontent.com/22185/41511842-d7e5deea-7276-11e8-824a-70ba9542cafe.png">
 
 
-
 ### C. Double check this is what you want
-
-Before the next stage **ALWAYS** double check the text in the box!
 
 Some commands can do some serious damage to your Bitnami install if entered incorrectly.
 
@@ -187,9 +180,9 @@ And now for the scary bit...
 
 ## 4. Stop the website running
 
-What?! Yeah. You're going to need to stop your entire website for this to work.
+What?! Yeah.
 
-Just to be clear: **this will take your website down!**
+You're going to have to stop your entire website running.
 
 Don't worry, this process will only take a minute or so and we can bring the site up again.
 
@@ -240,18 +233,17 @@ Copy and paste this into the terminal:
 sudo /opt/bitnami/ctlscript.sh start
 ```
 
-Make sure it all goes OK and go to your site and double check it's up and running.
+Go to your site and double check it's up and running.
 
 If something goes wrong here, shout for help and phone John!
 
 ## 7. Test the certificate is good
 
+See the bit at the start about clicking on the padlock by your site.
 
-High five yourself! But sadly we're not done. 
+Success? If so, high five yourself! But sadly we're not done. 
 
 This certificate will expire in a few months, meaning we need to log in and do this crazy dance all over again.
-
-Who has the time or patience for that?
 
 If only we were using a tool that could automatically do this for us... ...oh wait...
 
@@ -287,10 +279,12 @@ You should see this:
 
 <img width="801" alt="untitled 9" src="https://user-images.githubusercontent.com/22185/41512440-38fd0b14-7280-11e8-8f3b-f898d88b8ab5.png">
 
-The last line is the most important.
+Double check the last line matches exactly. If it is...
 
 ## 9. Celebrate!
 
 You've just navigated the insanely complex world of Bitnami and SSL certificates to setup HTTPS.
 
-Good job!
+And now your website will be seen by Google as all secure and shit.
+
+Nice one! 
