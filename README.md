@@ -15,13 +15,34 @@ https://eu-west-2.console.aws.amazon.com/console/home?region=eu-west-2#
 
 Copying and pasting code into this window is a bit mental.
 
-1. Click on the paste icon.
+Let's practice something:
 
-2. Paste into this box what you want to paste at the cursor.
+### 1. Click on the paste icon.
 
-3. Double check the text in the box! There is no going back...
+### 2. Paste into this box what you want to paste at the cursor.
 
-4. Right click anywhere in the window.
+Copy the following from this page and paste into the box:
+
+```bash
+echo 'This window is pretty annoying to paste into.'
+echo 'But we have superhero powers so we do not care.'
+```
+
+### 3. Double check this is what you want
+
+Before the next stage **ALWAYS** double check the text in the box!
+
+Some commands if entered incorrectly can do some serious damage to your Lightsail install.
+
+### 4. Click on the clipboard icon a second time
+
+It looks like nothing has happened. But it's remembered your text.
+
+### 5. Right click anywhere in the window
+
+The commands you pasted in will be executed immediately.
+
+Sometimes the last command will just sit there, so you might need to press return one final time.
 
 
 ## Setup domain and email
@@ -38,7 +59,7 @@ export EMAIL=<email address you logged into aws with>
 ```bash
 export DOMAIN=www.example.org
 export EMAIL=john@example.org
-
+```
 
 ## Create certificate
 
