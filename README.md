@@ -169,9 +169,9 @@ Copy and paste this into the terminal:
 ```bash
 # Install lego
 cd /tmp
-curl -s https://api.github.com/repos/xenolf/lego/releases/latest | grep browser_download_url | grep linux_amd64 | cut -d '"' -f 4 | wget -i -
-tar xf lego_linux_amd64.tar.xz
-sudo mv lego_linux_amd64 /usr/local/bin/lego
+echo https://github.com/xenolf/lego/releases/download/v1.0.1/lego_v1.0.1_linux_amd64.tar.gz | wget -i -
+tar xf lego_v1.0.1_linux_amd64.tar.gz
+sudo mv lego /usr/local/bin
 ```
 
 There will be a bunch of crap printed to the screen. Wait for it to stop.
