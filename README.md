@@ -135,15 +135,8 @@ Now we're ready to start copying and pasting commands.
 Copy and paste this into the terminal using the steps you just followed above.
 
 ```bash
-export DOMAIN=<your domain name here complete with www>
-export EMAIL=<email address you logged into aws with>
-```
-
-**Example**
-
-```bash
-export DOMAIN=www.example.org
-export EMAIL=john@example.org
+export DOMAIN=www.example.org # <== replace this with the real domain!
+export EMAIL=john@example.org # <== replace this with the email address of the login to AWS
 ```
 
 **Remember** you might need to hit return after pasting it in to execute the last one.
@@ -159,6 +152,24 @@ Yup. That means **it worked**.
 The terminal is written by nerds so it doesn't say nice stuff like "It worked". 
 
 It just sits there like a catatonic sloth.
+
+## 5. Install certbot
+
+```bash
+sudo mkdir /opt/bitnami/letsencrypt
+cd /opt/bitnami/letsencrypt
+sudo wget https://dl.eff.org/certbot-auto
+sudo chmod a+x ./certbot-auto
+sudo ./certbot-auto
+```
+
+You can ignore any errors.
+
+## 6. Create certificate in Wordpress
+
+```bash
+sudo ./certbot-auto certonly --webroot -w /opt/bitnami/apps/wordpress/htdocs/ -d $DOMAIN
+```
 
 ## 3. Install Lego
 
@@ -190,7 +201,7 @@ Just don't go for lunch at this point...
 
 Copy and paste into the terminal:
 
-```
+```bash
 # Stop bitnami
 sudo /opt/bitnami/ctlscript.sh stop
 
