@@ -171,7 +171,14 @@ You can ignore any errors.
 sudo ./certbot-auto certonly --webroot -w /opt/bitnami/apps/wordpress/htdocs/ -d $DOMAIN
 ```
 
-## 3. Install Lego
+## 7. Update wp-config.php
+
+```bash
+define('WP_SITEURL', 'https://DOMAIN/');
+define('WP_HOME', 'https://DOMAIN/');
+```
+
+## 8. Install Lego
 
 No, not the fun stuff. The weird command line tool that allows us to create certificates.
 
@@ -189,7 +196,7 @@ There will be a bunch of crap printed to the screen. Wait for it to stop.
 
 And now for the scary bit...
 
-## 4. Stop the website running
+## 9. Stop the website running
 
 What?! Yeah.
 
@@ -217,7 +224,7 @@ It's asking you "Do you accept the TOS? Y/n"
 
 Type "Y" for this and any other questions it asks.
 
-## 5. Install the new certificate
+## 10. Install the new certificate
 
 We've created the certificate.
 
@@ -235,7 +242,7 @@ sudo chown root:root /opt/bitnami/apache2/conf/server*
 sudo chmod 600 /opt/bitnami/apache2/conf/server*
 ```
 
-## 6. Start up the website again
+## 11. Start up the website again
 
 Copy and paste this into the terminal:
 
@@ -248,7 +255,7 @@ Go to your site and double check it's up and running.
 
 If something goes wrong here, shout for help and phone John!
 
-## 7. Test the certificate is good
+## 12. Test the certificate is good
 
 See the bit at the start about clicking on the padlock by your site.
 
@@ -258,7 +265,7 @@ This certificate will expire in a few months, meaning we need to log in and do t
 
 If only we were using a tool that could automatically do this for us... ...oh wait...
 
-## 8. Setup the certificate to automatically renew
+## 13. Setup the certificate to automatically renew
 
 We want the computer to run a script to automatically renew the certificate.
 
@@ -292,7 +299,7 @@ You should see this:
 
 Double check the last line matches exactly. If it is...
 
-## 9. Celebrate!
+## 14. Celebrate!
 
 You've just navigated the insanely complex world of Bitnami and SSL certificates to setup HTTPS.
 
