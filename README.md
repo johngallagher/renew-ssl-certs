@@ -171,8 +171,15 @@ sudo ./certbot-auto certonly --webroot -w /opt/bitnami/apps/wordpress/htdocs/ -d
 ```
 
 ## 7. Update wp-config.php
-
 ```bash
+vi ~/apps/wordpress/htdocs/wp-config.php
+```
+Find the lines that set WP_SITE_URL and WP_HOME:
+
+**Important** Change them so they have https:// before them rather than http. Leave the rest of the line as it is.
+
+```php
+/* Make sure they're on HTTPS. Example: */
 define('WP_SITEURL', 'https://DOMAIN/');
 define('WP_HOME', 'https://DOMAIN/');
 ```
