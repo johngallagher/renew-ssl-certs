@@ -313,3 +313,26 @@ You've just navigated the insanely complex world of Bitnami and SSL certificates
 And now your website will be seen by Google as all secure and shit.
 
 Nice one! 
+
+
+# Redirects and Lightsail
+
+* You'll need to edit a file that tells Apache how to redirect
+
+```bash
+vim /opt/bitnami/apps/wordpress/conf/httpd-prefix.conf
+```
+
+You'll see it starts something like this:
+
+```apache
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on  
+RewriteRule ^/(.*) https://%{SERVER_NAME}/$1 [R,L]
+```
+
+* Edit as required - see https://www.sitepoint.com/apache-mod_rewrite-examples/ for more information
