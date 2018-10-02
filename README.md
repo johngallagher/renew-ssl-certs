@@ -136,6 +136,7 @@ Copy and paste this into the terminal using the steps you just followed above.
 
 ```bash
 export DOMAIN=www.example.org # <== replace this with the real domain!
+export ROOT_DOMAIN=example.org # <== as above but without www
 export EMAIL=john@example.org # <== replace this with the email address of the login to AWS
 ```
 
@@ -167,7 +168,7 @@ You can ignore any errors.
 ## 6. Create certificate in Wordpress
 
 ```bash
-sudo ./certbot-auto certonly --webroot -w /opt/bitnami/apps/wordpress/htdocs/ -d $DOMAIN
+sudo ./certbot-auto certonly --webroot -w /opt/bitnami/apps/wordpress/htdocs/ -d $DOMAIN -d $ROOT_DOMAIN
 ```
 
 ## 7. Update wp-config.php
@@ -219,7 +220,7 @@ Copy and paste into the terminal:
 sudo /opt/bitnami/ctlscript.sh stop
 
 # Create certificate
-sudo lego --email="$EMAIL" --domains="$DOMAIN" --path="/etc/lego" run
+sudo lego --email="$EMAIL" --domains="$DOMAIN"  --domains="$ROOT_DOMAIN" --path="/etc/lego" run
 ```
 
 This will spit out a bunch of crap onto the screen:
@@ -283,7 +284,7 @@ touch ~/renew-certificate.sh
 echo '#!/bin/bash' > ~/renew-certificate.sh
 echo '' >> ~/renew-certificate.sh
 echo "sudo /opt/bitnami/ctlscript.sh stop apache" >> ~/renew-certificate.sh
-echo "sudo /usr/local/bin/lego --email=\"$EMAIL\" --domains=\"$DOMAIN\" --path=\"/etc/lego\" renew" >> ~/renew-certificate.sh
+echo "sudo /usr/local/bin/lego --email=\"$EMAIL\" --domains=\"$DOMAIN\" --domains=\"$ROOT_DOMAIN\" --path=\"/etc/lego\" renew" >> ~/renew-certificate.sh
 echo "sudo /opt/bitnami/ctlscript.sh start apache" >> ~/renew-certificate.sh
 
 chmod +x ~/renew-certificate.sh
